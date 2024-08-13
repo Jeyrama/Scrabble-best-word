@@ -9,3 +9,6 @@ The function takes two arguments :
 You must return the index of the shortest word which realizes the highest score.
 If the length and the score are the same for two elements, return the index of the first one.
 */
+
+
+// Solution
