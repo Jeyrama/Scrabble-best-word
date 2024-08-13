@@ -26,3 +26,29 @@ function scoreWord(points,word){
 }
 
 // or
+
+function getBestWord(points,words){
+  let scoreWord = [];
+  let score = 0;
+  
+  words.sort(function(a, b) {
+  return a.length - b.length;
+  });
+  
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  for(let i = 0; i < words.length; i++){
+    for(let j = 0; j<words[i].length; j++){
+      score += points[alphabet.indexOf(words[i][j].toLowerCase())];
+    }
+    scoreWord.push(score);
+    score = 0;
+  }
+  score = scoreWord[0];
+  for(i = 0; i < scoreWord.length; i++){
+    if(scoreWord[i] >= score){
+      score = scoreWord[i];
+    }
+  }
+
+  return scoreWord.indexOf(score);
+}
