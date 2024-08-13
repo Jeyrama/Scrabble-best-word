@@ -24,3 +24,5 @@ function getBestWord(points,words){
 function scoreWord(points,word){
 	return word.split('').map( c => points[c.charCodeAt(0)-65] ).reduce( (a,b) => a+b )
 }
+
+// or
